@@ -493,7 +493,12 @@ defmodule GRPC.Stub do
     if status == GRPC.Status.ok() do
       :ok
     else
-      {:error, %GRPC.RPCError{status: status, message: trailers["grpc-message"]}}
+      {:error,
+       %{
+         status: status,
+         message: trailers["grpc-message"],
+         details: trailers["grpc-status-details-bin"]
+       }}
     end
   end
 
