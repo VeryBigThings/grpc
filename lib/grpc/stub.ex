@@ -42,7 +42,7 @@ defmodule GRPC.Stub do
   @secure_scheme "https"
   @canceled_error GRPC.RPCError.exception(GRPC.Status.cancelled(), "The operation was cancelled")
   # 10 seconds
-  @default_timeout 10000
+  @default_timeout 20000
 
   @type receive_data_return ::
           {:ok, struct()}
