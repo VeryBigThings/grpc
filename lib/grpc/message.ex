@@ -10,7 +10,7 @@ defmodule GRPC.Message do
     Message-Length -> {length of Message} # encoded as 4 byte unsigned integer
     Message -> *{binary octet}
   """
-  use Bitwise, only_operators: true
+  import Bitwise
   @max_message_length 1 <<< (32 - 1)
 
   alias GRPC.RPCError

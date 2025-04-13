@@ -1,13 +1,13 @@
 defmodule GRPC.Mixfile do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.5.1"
 
   def project do
     [
       app: :grpc,
       version: @version,
-      elixir: "~> 1.11",
+      elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
@@ -39,14 +39,14 @@ defmodule GRPC.Mixfile do
 
   defp deps do
     [
-      {:cowboy, "~> 2.9"},
+      {:cowboy, "~> 2.13"},
       # This is the same as :gun 2.0.0-rc.2,
       # but we can't depend on an RC for releases
-      {:gun, "~> 2.0.1", hex: :grpc_gun},
-      {:cowlib, "~> 2.11"},
-      {:protobuf, "~> 0.10", only: [:dev, :test]},
-      {:ex_doc, "~> 0.28.0", only: :dev},
-      {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:gun, "~> 2.0", hex: :grpc_gun},
+      {:cowlib, "~> 2.15"},
+      {:protobuf, "~> 0.14.1"},
+      {:ex_doc, "~> 0.37.3", only: :dev},
+      {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
   end
 
