@@ -23,12 +23,13 @@ defmodule Interop.MixProject do
   defp deps do
     [
       {:grpc, path: "..", override: true},
-      {:protobuf, "~> 0.10"},
+      {:protobuf, "~> 0.14.1"},
       {:grpc_prometheus, ">= 0.1.0"},
       {:grpc_statsd, "~> 0.1.0"},
       {:statix, ">= 1.2.1"},
       {:extrace, "~> 0.2"},
-      {:prometheus, "~> 4.0", override: true}
+      {:prometheus, "~> 5.0", override: true},
+      {:prometheus_ex, "~> 4.0", override: true}
     ]
   end
 end
