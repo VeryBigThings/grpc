@@ -44,7 +44,7 @@ defmodule GRPC.Mixfile do
       # but we can't depend on an RC for releases
       {:gun, "~> 2.0", hex: :grpc_gun},
       {:cowlib, "~> 2.15"},
-      {:protobuf, "~> 0.14.1"},
+      # {:protobuf, "~> 0.14.1"},
       {:ex_doc, "~> 0.37.3", only: :dev},
       {:dialyxir, "~> 1.4", only: [:dev, :test], runtime: false}
     ]
